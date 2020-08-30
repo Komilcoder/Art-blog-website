@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+	{% block title %}
+		<h4>Regstration</h4>
+	    
+	{% endblock title %}
+
+
+	{% block content %}
+
+		   <div class="form-group">
+		   	<h4>Regstration</h4>
+    <form method="post">
+        {% csrf_token %}
+      		{{form|crispy}}
+        <br>
+
+       <button type="button" class="btn btn-primary">Sign Up</button>
+        <br><br>
+        Not Registered? Sign Up <a href="{% url 'profiles:registr_view'%}" class="here">Here</a>
+    
+    
+    </form>
+
+
+    </div>
+
+	{% endblock content %}

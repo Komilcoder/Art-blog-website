@@ -1,0 +1,71 @@
+<div class="ui inverted menu nav mb-7">
+    <style>
+     .logout{
+         color:  #FFD700;
+     }
+     .login{
+         color: #FFD700;
+     }
+     
+    </style>
+    <div class="ui container">
+        <a href="" class="item">
+            <h3>artbook</h3>
+        </a>
+        
+        <a href="{% url 'home'%}" class="item">
+            Home
+        </a>
+        <a href="{% url 'profiles:my_profile'%}" class="item">Profile</a>
+        <a href="{% url 'posts:post_comment_view'%}" class="item">Posts</a>
+        <a href="{% url 'profiles:profile_list_view'%}" class="item">Suggestion Friends</a>
+
+
+        <div class="right menu">
+            {% if request.user.is_authenticated %}
+            <div class="item">
+                <div class="ui floating dropdown icon button teal">Friends
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="" class="item">
+                            All Profiles
+                        </a>
+                       
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="item">
+                <form action="" method="GET">
+                    <div class="ui action left icon input">
+                        <input type="text" name="q" class="prompt" placeholder="name of a friend">
+                        <i class="search icon"></i>
+                        <button type="submit" class="ui button">Search</button>
+
+                    </div>
+                </form>
+
+            </div>
+         
+             <a href="" class="item">
+               <strong>You are logged as {{request.user}}</strong> 
+            </a>
+            <a href="{% url 'logout'%}" class="ui item">
+                Logout
+            </a>
+            {% else %}
+            
+            <a href="{% url 'login'%}" class="ui item">
+                Login
+            </a>    
+
+
+            {% endif %} 
+
+        </div>
+    </div>
+
+</div>

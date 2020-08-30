@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+    {% block title %}
+        home
+    {% endblock %}
+
+
+    {% block content %}
+
+    {% endblock %}
+       <h3 class="user">Welcome our site , {% if user.is_authenticated %} {{user.username}} {% else %} visitor {% endif %}</h3>
+    {% block script %}
+   
+    {% endblock script %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Login
+{% endblock title %}
+<style>
+	.container{
+		text-align: center;
+	}
+	
+</style>
+
+{% block content %}
+
+
+    <h3>If you are log out , you may log in here</h3>
+
+
+<br>
+    <h4>Log in</h4>
+    <div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control" placeholder="Username" name="username"><br><br>
+        <input type="password" class="form-control" placeholder="Password" name="password">
+        <br>
+        <br>
+        <button class="btn btn-secondary">Login</button>
+        <br><br>
+        Not Registered? Sign Up <a href="{% url 'profiles:registr_view'%}" class="here">Here</a>
+    
+    
+    </form>
+
+
+    </div>
+
+{% endblock content %}
